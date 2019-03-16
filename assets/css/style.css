@@ -1,0 +1,25 @@
+.top-middle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 101;
+}
+
+/*validation text size*/
+
+.has-text-danger{
+    font-size: 0.75rem
+}
+
+/*pagination*/
+
+.pager .pagination>li>a,
+.pager .pagination>li>span {
+    color: #343a40;
+}
+.pagination>li.page-item.active>a {
+    border: 1px solid #343a40;
+  background: #343a40;
+  color: #fff;
+}

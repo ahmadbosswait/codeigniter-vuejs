@@ -57,7 +57,7 @@ var v = new Vue({
     },
     methods: {
         showAll() {
-            axios.get(this.url + "user/showAll").then(function (response) {
+            axios.get(this.url + "api/user/showAll").then(function (response) {
                 if (response.data.users == null) {
                     v.noResult()
                 } else {
@@ -67,7 +67,7 @@ var v = new Vue({
         },
         searchUser() {
             var formData = v.formData(v.search);
-            axios.post(this.url + "user/searchUser", formData).then(function (response) {
+            axios.post(this.url + "api/user/searchUser", formData).then(function (response) {
                 if (response.data.users == null) {
                     v.noResult()
                 } else {
@@ -81,7 +81,7 @@ var v = new Vue({
             var formData = v.formData(v.newUser);
             formData.append('file', this.file_data);
 
-            axios.post(this.url + "user/addUser", formData).then(function (response) {
+            axios.post(this.url + "api/user/addUser", formData).then(function (response) {
                 if (response.data.error) {
                     v.formValidate = response.data.msg;
                 } else {
@@ -94,7 +94,7 @@ var v = new Vue({
         },
         updateUser() {
             var formData = v.formData(v.chooseUser);
-            axios.post(this.url + "user/updateUser", formData).then(function (response) {
+            axios.post(this.url + "api/user/updateUser", formData).then(function (response) {
                 if (response.data.error) {
                     v.formValidate = response.data.msg;
                 } else {
@@ -107,7 +107,7 @@ var v = new Vue({
         },
         deleteUser() {
             var formData = v.formData(v.chooseUser);
-            axios.post(this.url + "user/deleteUser", formData).then(function (response) {
+            axios.post(this.url + "api/user/deleteUser", formData).then(function (response) {
                 if (!response.data.error) {
                     v.successMSG = response.data.success;
                     v.clearAll();
@@ -217,11 +217,11 @@ var image = new Vue({
         images: {},
     },
     mounted() {
-        this.fetchData();
+        this.fetchImages();
     },
     methods: {
-        fetchData() {
-            let url = "http://localhost/civuejs/user/showAll";
+        fetchImages() {
+            let url = "http://localhost/civuejs/api/user/showAll";
             axios.get(url).then((res) => {
                 this.images = res.data.users;
             });

@@ -3,20 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends CI_Controller
 {
+
     function __construct()
     {
         parent::__construct();
-        if (!$this->session->userdata('admin'))
-            redirect('admin');
         $this->load->model('user_model', 'user');
         $this->load->helper(array('form', 'url'));
-    }
-
-    public function index()
-    {
-        $this->load->view('admin/header');
-        $this->load->view('admin/user');
-        $this->load->view('admin/footer');
     }
 
     public function showAll()
@@ -185,9 +177,8 @@ class User extends CI_Controller
         echo json_encode($result);
     }
 
-    public function deleteUser()
+    public function deleteUser($id)
     {
-        $id = $this->input->post('id');
         if ($this->user->deleteUser($id)) {
             $msg['error'] = false;
             $msg['success'] = 'User deleted successfully';
@@ -200,7 +191,7 @@ class User extends CI_Controller
 
     public function searchUser()
     {
-        $value = $this->input->get('text');
+        $value = $this->input->get('filter');
         $query = $this->user->searchUser($value);
         if ($query) {
             $result['users'] = $query;
@@ -210,4 +201,4 @@ class User extends CI_Controller
 
     }
 }
-    
+

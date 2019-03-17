@@ -214,7 +214,6 @@ var v = new Vue({
 var image = new Vue({
     el: '#image_app',
     data: {
-        file_data: '',
         images: {},
     },
     mounted() {

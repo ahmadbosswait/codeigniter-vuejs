@@ -25,7 +25,7 @@
     <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>
     <script src="https://npmcdn.com/vue-router/dist/vue-router.js"></script>
 
-</head>
+        </head>
 <script src="https://npmcdn.com/vue/dist/vue.js"></script>
 <script src="https://npmcdn.com/vue-router/dist/vue-router.js"></script>
 
@@ -37,27 +37,23 @@
                 <a class="navbar-brand" href="<?php echo base_url(); ?>">Navbar</a>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href=" <?php echo base_url(); ?>">
-                            Home <span class="sr-only">(current)</span>
-                        </a>
-                        <!--<router-link to="/civuejs/" class="nav-link">-->
-                        <!--<p>Home</p>-->
-                        <!--</router-link>-->
+                                                <a class="nav-link" href="
+                        <?php echo base_url(); ?>">Home <span
+                                                            class="sr-only">(current)</span></a>
+<!--                        <router-link to="/civuejs/" class="nav-link">-->
+<!--                            <p>Home</p>-->
+<!--                        </router-link>-->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url(); ?>pages/view/about">About</a>
+<!--                        <router-link to="/civuejs/users" class="nav-link">-->
+<!--                            <p>User</p>-->
+<!--                        </router-link>-->
+                        <a class="nav-link" href="
+                        <?php echo base_url(); ?>user">User</a>
                     </li>
-                    <?php if ($this->session->userdata('admin')): ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo base_url(); ?>admin/dashboard/index">Admin</a>
-                        </li>
-                    <?php endif; ?>
-
-                    <?php if (!$this->session->userdata('admin')): ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo base_url(); ?>admin/dashboard/index">Login</a>
-                        </li>
-                    <?php endif; ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url(); ?>admin/dashboard/logout">Logout</a>
+                    </li>
                 </ul>
             </div>
         </nav>

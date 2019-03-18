@@ -121,7 +121,7 @@ function &DB($params = '', $query_builder_override = NULL)
 			'dbdriver'	=> $dsn['scheme'],
 			'hostname'	=> isset($dsn['host']) ? rawurldecode($dsn['host']) : '',
 			'port'		=> isset($dsn['port']) ? rawurldecode($dsn['port']) : '',
-			'username'	=> isset($dsn['user']) ? rawurldecode($dsn['user']) : '',
+			'username'	=> isset($dsn['UserModel']) ? rawurldecode($dsn['UserModel']) : '',
 			'password'	=> isset($dsn['pass']) ? rawurldecode($dsn['pass']) : '',
 			'database'	=> isset($dsn['path']) ? rawurldecode(substr($dsn['path'], 1)) : ''
 		);

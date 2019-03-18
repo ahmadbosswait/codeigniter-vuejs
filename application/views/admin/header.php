@@ -34,11 +34,12 @@
     <div class="col-lg-12">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
+            <div class="container">
                 <a class="navbar-brand" href="<?php echo base_url(); ?>">Navbar</a>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                                                 <a class="nav-link" href="
-                        <?php echo base_url(); ?>">Home <span
+                        <?php echo base_url(); ?>admin\">Home <span
                                                             class="sr-only">(current)</span></a>
 <!--                        <router-link to="/civuejs/" class="nav-link">-->
 <!--                            <p>Home</p>-->
@@ -49,7 +50,7 @@
 <!--                            <p>User</p>-->
 <!--                        </router-link>-->
                         <a class="nav-link" href="
-                        <?php echo base_url(); ?>user">User</a>
+                        <?php echo base_url(); ?>admin\user">User</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url(); ?>admin/dashboard/logout">Logout</a>

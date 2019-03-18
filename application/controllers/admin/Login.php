@@ -16,8 +16,8 @@ class Login extends CI_Controller
     function verify()
     {
         //username:admin password:123456
-        $this->load->model('admin');
-        $check = $this->admin->validate();
+        $this->load->model('admin_model');
+        $check = $this->admin_model->validate();
         if($check)
         {
             $this->session->set_userdata('admin','1');

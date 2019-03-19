@@ -24,7 +24,10 @@
     <script src="<?php echo base_url() ?>assets/js/axios.min.js"></script>
     <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>
     <script src="https://npmcdn.com/vue-router/dist/vue-router.js"></script>
-
+    <style>
+        @media only screen and (max-width: 800px) {.card-columns{column-count: 1 !important; }}
+        @media only screen and (min-width: 992px) {.card-columns.cards{column-count: 4 !important;}}
+    </style>
 </head>
 <script src="https://npmcdn.com/vue/dist/vue.js"></script>
 <script src="https://npmcdn.com/vue-router/dist/vue-router.js"></script>

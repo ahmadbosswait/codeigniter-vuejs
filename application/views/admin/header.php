@@ -25,7 +25,7 @@
     <script src="<?php echo base_url() ?>assets/js/jquery.min.js"></script>
     <script src="https://npmcdn.com/vue-router/dist/vue-router.js"></script>
 
-        </head>
+</head>
 <script src="https://npmcdn.com/vue/dist/vue.js"></script>
 <script src="https://npmcdn.com/vue-router/dist/vue-router.js"></script>
 
@@ -34,29 +34,20 @@
     <div class="col-lg-12">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-            <div class="container">
                 <a class="navbar-brand" href="<?php echo base_url(); ?>">Navbar</a>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                                                <a class="nav-link" href="
-                        <?php echo base_url(); ?>admin\">Home <span
-                                                            class="sr-only">(current)</span></a>
-<!--                        <router-link to="/civuejs/" class="nav-link">-->
-<!--                            <p>Home</p>-->
-<!--                        </router-link>-->
-                    </li>
-                    <li class="nav-item">
-<!--                        <router-link to="/civuejs/users" class="nav-link">-->
-<!--                            <p>User</p>-->
-<!--                        </router-link>-->
                         <a class="nav-link" href="
-                        <?php echo base_url(); ?>admin\user">User</a>
+                        <?php echo base_url(); ?>admin\">Home <span
+                                    class="sr-only">(current)</span></a>
+                        <!--                        <router-link to="/civuejs/" class="nav-link">-->
+                        <!--                            <p>Home</p>-->
+                        <!--                        </router-link>-->
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url(); ?>admin/dashboard/logout">Logout</a>
                     </li>
                 </ul>
-            </div>
         </nav>
     </div>
 </div>

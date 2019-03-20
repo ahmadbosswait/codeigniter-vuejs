@@ -50,13 +50,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url(); ?>pages/view/about">About</a>
                     </li>
-                    <?php if ($this->session->userdata('Admin')): ?>
+                    <?php if ($this->session->userdata('admin')): ?>
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo base_url(); ?>admin/dashboard/index">Admin</a>
                         </li>
                     <?php endif; ?>
 
-                    <?php if (!$this->session->userdata('Admin')): ?>
+                    <?php if (!$this->session->userdata('admin')): ?>
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo base_url(); ?>admin/dashboard/index">Login</a>
                         </li>

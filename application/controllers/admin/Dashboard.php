@@ -14,7 +14,6 @@ class Dashboard extends CI_Controller
 //        if (!file_exists(APPPATH . 'views/admin/pages/' . $page . '.php')) {
 //            show_404();
 //        }
-//        $data['title'] = ucfirst($page);
         $this->load->view('admin/header');
         $this->load->view('admin/dashboard');
         $this->load->view('templates/footer');

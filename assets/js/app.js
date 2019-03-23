@@ -24,7 +24,7 @@ Vue.component('modal', { //modal
 var v = new Vue({
     el: '#app',
     data: {
-        url: 'http://localhost/civuejs/',
+        url: 'http://5x5.ir/',
         addModal: false,
         editModal: false,
         deleteModal: false,
@@ -221,7 +221,7 @@ var image = new Vue({
     },
     methods: {
         fetchImages() {
-            let url = "http://localhost/civuejs/api/user/showAll";
+            let url = "http://5x5.ir/api/user/showAll";
             axios.get(url).then((res) => {
                 this.images = res.data.users;
             });

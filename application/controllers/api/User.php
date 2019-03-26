@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 // Api route
 class User extends CI_Controller
 {
@@ -9,6 +10,7 @@ class User extends CI_Controller
         parent::__construct();
         $this->load->model('user_model', 'user');
         $this->load->helper(array('form', 'url'));
+        $this->load->library('image_lib');
     }
 
     public function showAll()
@@ -88,10 +90,9 @@ class User extends CI_Controller
                 'address' => $this->input->post('address')
 
             );
-//            $config2['upload_path'] = './upload/';
             $config2['upload_path'] = './assets/upload/';
             $config2['allowed_types'] = 'gif|jpg|png|jpeg';
-            $config2['max_size'] = 1000;
+            $config2['max_size'] = 2000;
             $config2['max_width'] = 2500;
             $config2['max_height'] = 1400;
 
@@ -99,8 +100,21 @@ class User extends CI_Controller
             if ($this->upload->do_upload('file')) {
                 $upload_data = $this->upload->data();
                 $file_name = $upload_data['file_name'];
-                $success = array('success' => "http://localhost/ci-vuejs/upload/" . $file_name);
                 $data['img_src'] = $file_name;
+//                $this->resizeImage($file_name);
+                // process resize image before upload
+                $config3['image_library'] = 'gd2';
+                $config3['source_image'] = $upload_data['full_path'];
+                $config3['create_thumb'] = TRUE;
+                $config3['maintain_ratio'] = TRUE;
+                $config3['width'] = 75;
+                $config3['height'] = 75;
+
+                $this->image_lib->initialize($config3);
+
+                $this->image_lib->resize();
+                $fileName = substr($upload_data['file_name'], 0, -4);
+                $data['img_src_thumb'] = $fileName . '_thumb.jpg';
             }
             if ($this->user->addUser($data)) {
                 $result['error'] = false;

@@ -5,6 +5,7 @@ class User_model extends CI_Model
     public function showAll()
     {
         $query = $this->db->get('users');
+        $this->db->order_by('id', 'DESC');
         if ($query->num_rows() > 0) {
             return $query->result();
         } else {

@@ -80,7 +80,7 @@ var v = new Vue({
             this.file_data = $('#image').prop('files')[0];
             var formData = v.formData(v.newUser);
             formData.append('file', this.file_data);
-
+            console.log(formData);
             axios.post(this.url + "api/user/addUser", formData).then(function (response) {
                 if (response.data.error) {
                     v.formValidate = response.data.msg;

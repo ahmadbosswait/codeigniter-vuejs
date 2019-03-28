@@ -19,6 +19,7 @@ class User extends CI_Controller
         if ($query) {
             $result['users'] = $this->user->showAll();
         }
+
         echo json_encode($result);
     }
 
@@ -31,43 +32,45 @@ class User extends CI_Controller
         echo json_encode($result);
     }
 
-    public function addUser()
+    public function addUser($id)
     {
+        var_dump($id);
+die;
         $config = array(
             array('field' => 'firstname',
                 'label' => 'Firstname',
-                'rules' => 'trim|required'
+                'rules' => 'trim'
             ),
             array('field' => 'lastname',
                 'label' => 'Lastname',
-                'rules' => 'trim|required'
+                'rules' => 'trim'
             ),
             array('field' => 'gender',
                 'label' => 'Gender',
-                'rules' => 'required'
+                'rules' => ''
             ),
             array('field' => 'birthday',
                 'label' => 'Birthday',
-                'rules' => 'trim|required'
+                'rules' => 'trim'
             ),
             array('field' => 'email',
                 'label' => 'Email',
-                'rules' => 'trim|required'
+                'rules' => 'trim'
             ),
             array(
                 'field' => 'contact',
                 'label' => 'Contact',
-                'rules' => 'trim|required'
+                'rules' => 'trim'
             ),
             array(
                 'field' => 'address',
                 'label' => 'Address',
-                'rules' => 'trim|required'
+                'rules' => 'trim'
             )
         );
 
         $this->form_validation->set_rules($config);
-        if ($this->form_validation->run() == FALSE) {
+        if (/*$this->form_validation->run() == */FALSE) {
             $result['error'] = true;
             $result['msg'] = array(
                 'firstname' => form_error('firstname'),
@@ -79,7 +82,8 @@ class User extends CI_Controller
                 'address' => form_error('address')
             );
 
-        } else {
+        } else
+            {
             $data = array(
                 'firstname' => $this->input->post('firstname'),
                 'lastname' => $this->input->post('lastname'),

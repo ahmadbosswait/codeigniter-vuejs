@@ -4,7 +4,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // Api route
 class User extends CI_Controller
 {
-
     function __construct()
     {
         parent::__construct();
@@ -32,10 +31,8 @@ class User extends CI_Controller
         echo json_encode($result);
     }
 
-    public function addUser($id)
+    public function addUser()
     {
-        var_dump($id);
-die;
         $config = array(
             array('field' => 'firstname',
                 'label' => 'Firstname',
@@ -70,7 +67,7 @@ die;
         );
 
         $this->form_validation->set_rules($config);
-        if (/*$this->form_validation->run() == */FALSE) {
+        if ($this->form_validation->run() == FALSE) {
             $result['error'] = true;
             $result['msg'] = array(
                 'firstname' => form_error('firstname'),
@@ -82,8 +79,7 @@ die;
                 'address' => form_error('address')
             );
 
-        } else
-            {
+        } else {
             $data = array(
                 'firstname' => $this->input->post('firstname'),
                 'lastname' => $this->input->post('lastname'),

@@ -7,7 +7,6 @@ class User extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('user_model', 'user');
         $this->load->helper(array('form', 'url'));
         $this->load->library('image_lib');
     }
